@@ -1,4 +1,5 @@
 import React from "react";
+import ImageIcon from "../../img/image-icon.png";
 import "./ImageCropper.scss";
 
 interface Props {
@@ -44,7 +45,7 @@ const ImageCropper: React.FC<Props> = ({ currentImage }) => {
 
   return (
     <React.Fragment>
-      {currentImage ? (
+      {currentImage && (
         <div className="image-cropper">
           <div className="image-name">{currentImage.name}</div>
           <div className="original-image-container">
@@ -55,14 +56,17 @@ const ImageCropper: React.FC<Props> = ({ currentImage }) => {
               alt="original"
               onLoad={onImageLoad}
             />
-            <canvas id="canvas-element"></canvas>
+            <canvas id="canvas-element" width="0" height="0"></canvas>
           </div>
         </div>
-      ) : (
+      )}
+
+      {!currentImage && (
         <div className="no-image">
           <div className="header">No image selected</div>
           <div className="description">
-            Please select an image from the image list
+            <img className="image-icon" src={ImageIcon} alt="item" />
+            <div>Please select an image from the image list</div>
           </div>
         </div>
       )}
