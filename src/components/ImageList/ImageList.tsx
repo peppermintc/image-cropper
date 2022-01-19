@@ -15,8 +15,8 @@ const ImageList: React.FC = () => {
         ))}
       </div>
       <div className="status">
-        <div className="total">Total: 0 images</div>
-        <div className="cropped">Crop completed: 0 / 0</div>
+        <div className="total">Total: {imageList.length} images</div>
+        <div className="cropped">Crop completed: 0 / {imageList.length}</div>
       </div>
     </div>
   );
