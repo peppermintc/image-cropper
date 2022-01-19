@@ -1,3 +1,4 @@
+import ImageCropper from "../../components/ImageCropper/ImageCropper";
 import Setting from "../../components/Setting/Setting";
 import SideBar from "../../components/SideBar/SideBar";
 import "./HomePage.scss";
@@ -6,7 +7,7 @@ const HomePage = () => {
   return (
     <div className="home-container">
       <SideBar />
-      <div>Image Cropper</div>
+      <ImageCropper />
       <Setting />
     </div>
   );
