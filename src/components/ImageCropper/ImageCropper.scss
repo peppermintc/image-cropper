@@ -29,6 +29,10 @@
       max-height: 90%;
       max-width: 90%;
       border: 1px solid white;
+
+      &:hover {
+        cursor: crosshair;
+      }
     }
   }
 }
