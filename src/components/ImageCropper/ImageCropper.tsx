@@ -1,3 +1,4 @@
+import React from "react";
 import "./ImageCropper.scss";
 
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
 
 const ImageCropper: React.FC<Props> = ({ currentImage }) => {
   return (
-    <div className="image-cropper-container">
+    <React.Fragment>
       {currentImage ? (
         <div className="image-cropper">
           <div className="image-name">{currentImage.name}</div>
@@ -31,11 +32,7 @@ const ImageCropper: React.FC<Props> = ({ currentImage }) => {
           </div>
         </div>
       )}
-      <div className="cropped-preview">
-        <div className="title">Crop preview</div>
-        <div className="cropped-image-container"></div>
-      </div>
-    </div>
+    </React.Fragment>
   );
 };
 
