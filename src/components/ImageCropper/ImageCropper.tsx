@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 import ImageIcon from "../../img/image-icon.png";
 import "./ImageCropper.scss";
 
@@ -17,6 +18,50 @@ interface ImageSizeInterface {
 }
 
 const ImageCropper: React.FC<Props> = ({ currentImage }) => {
+  const [isCropping, setIsCropping] = useState(false);
+  const [locA, setLocA] = useState<{ x: number; y: number }>();
+  const [locB, setLocB] = useState<{ x: number; y: number }>();
+  const [ctx, setCtx] = useState<CanvasRenderingContext2D | null>(null);
+
+  useEffect(() => {
+    const canvasElement: HTMLCanvasElement | null =
+      document.querySelector("#canvas-element");
+    if (!canvasElement) return;
+    const newCtx = canvasElement.getContext("2d");
+    setCtx(newCtx);
+  }, [currentImage]);
+
+  useEffect(() => {
+    if (!locA || !locB) return;
+    if (!ctx) return;
+
+    const canvasElement: HTMLCanvasElement | null =
+      document.querySelector("#canvas-element");
+    if (!canvasElement) return;
+
+    const drawRect = ({
+      x,
+      y,
+      w,
+      h,
+    }: {
+      x: number;
+      y: number;
+      w: number;
+      h: number;
+    }) => {
+      ctx.strokeStyle = "#7fe7dc";
+      ctx.lineWidth = 2;
+      ctx.rect(x, y, w, h);
+      ctx.stroke();
+    };
+
+    ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+    ctx.beginPath();
+
+    drawRect({ x: locA.x, y: locA.y, w: locB.x - locA.x, h: locB.y - locA.y });
+  }, [locB, ctx]);
+
   const onImageLoad = () => {
     if (!currentImage) return;
 
@@ -43,6 +88,43 @@ const ImageCropper: React.FC<Props> = ({ currentImage }) => {
     setCanvasSize(imageSize.width, imageSize.height);
   };
 
+  const onCanvasMouseDown = (
+    e: React.MouseEvent<HTMLCanvasElement, MouseEvent>
+  ) => {
+    setIsCropping(true);
+    setLocA(getMousePosition(e));
+  };
+
+  const onCanvasMouseMove = (
+    e: React.MouseEvent<HTMLCanvasElement, MouseEvent>
+  ) => {
+    if (!isCropping) return;
+    setLocB(getMousePosition(e));
+  };
+
+  const onCanvasMouseUp = (
+    e: React.MouseEvent<HTMLCanvasElement, MouseEvent>
+  ) => {
+    setIsCropping(false);
+  };
+
+  const onCanvasMouseLeave = () => {
+    setIsCropping(false);
+  };
+
+  const getMousePosition = (
+    e: React.MouseEvent<HTMLCanvasElement, MouseEvent>
+  ) => {
+    const canvasElement: HTMLCanvasElement | null =
+      document.querySelector("#canvas-element");
+    if (!canvasElement) return;
+    const canvasPositionInfo = canvasElement.getBoundingClientRect();
+    return {
+      x: e.clientX - canvasPositionInfo.left,
+      y: e.clientY - canvasPositionInfo.top,
+    };
+  };
+
   return (
     <React.Fragment>
       {currentImage && (
@@ -56,7 +138,15 @@ const ImageCropper: React.FC<Props> = ({ currentImage }) => {
               alt="original"
               onLoad={onImageLoad}
             />
-            <canvas id="canvas-element" width="0" height="0"></canvas>
+            <canvas
+              id="canvas-element"
+              width="0"
+              height="0"
+              onMouseDown={onCanvasMouseDown}
+              onMouseMove={onCanvasMouseMove}
+              onMouseUp={onCanvasMouseUp}
+              onMouseLeave={onCanvasMouseLeave}
+            ></canvas>
           </div>
         </div>
       )}
