@@ -2,10 +2,18 @@ import AddImageButton from "../AddImageButton/AddImageButton";
 import ImageList from "../ImageList/ImageList";
 import "./SideBar.scss";
 
-const SideBar = () => {
+interface Props {
+  sampleImageList: {
+    id: number;
+    name: string;
+    url: string;
+  }[];
+}
+
+const SideBar: React.FC<Props> = ({ sampleImageList }) => {
   return (
     <div className="side-bar">
-      <ImageList />
+      <ImageList sampleImageList={sampleImageList} />
       <AddImageButton />
     </div>
   );
