@@ -1,10 +1,10 @@
 import { Dispatch } from "redux";
 
 interface currentImageInterface {
-  id: Number;
-  name: String;
-  url: String;
-  cropped: String | null;
+  id: number;
+  name: string;
+  url: string;
+  cropped: string | null;
 }
 
 // Action creators

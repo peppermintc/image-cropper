@@ -1,15 +1,9 @@
-import "./ImageCropper.scss";
+import { RootStateOrAny, useSelector } from "react-redux";
+import "./ImageCroppingSection.scss";
 
-interface Props {
-  currentImage: {
-    id: number;
-    name: string;
-    url: string;
-    cropped: string | null;
-  } | null;
-}
+const ImageCroppingSection = () => {
+  const { currentImage } = useSelector((state: RootStateOrAny) => state.image);
 
-const ImageCropper: React.FC<Props> = ({ currentImage }) => {
   return (
     <div className="image-cropper-container">
       {currentImage ? (
@@ -39,4 +33,4 @@ const ImageCropper: React.FC<Props> = ({ currentImage }) => {
   );
 };
 
-export default ImageCropper;
+export default ImageCroppingSection;

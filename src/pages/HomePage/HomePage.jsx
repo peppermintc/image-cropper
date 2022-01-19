@@ -1,4 +1,4 @@
-import ImageCropper from "../../components/ImageCropper/ImageCropper";
+import ImageCropper from "../../components/ImageCroppingSection/ImageCroppingSection";
 import Setting from "../../components/Setting/Setting";
 import SideBar from "../../components/SideBar/SideBar";
 import "./HomePage.scss";

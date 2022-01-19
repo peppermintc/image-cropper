@@ -1,0 +1,71 @@
+@import "../../App.scss";
+
+.image-cropper-container {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  .image-cropper {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+
+    .image-name {
+      padding: 15px;
+      border-bottom: 1px solid $light-blue;
+    }
+
+    .original-image-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .original-image {
+        position: absolute;
+        max-height: 90%;
+        max-width: 90%;
+        border: 1px solid white;
+      }
+    }
+  }
+
+  .no-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      padding: 15px;
+      border-bottom: 1px solid $light-blue;
+    }
+
+    .description {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .cropped-preview {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      padding: 15px;
+      border-top: 1px solid $light-blue;
+      border-bottom: 1px solid $light-blue;
+    }
+
+    .cropped-image-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

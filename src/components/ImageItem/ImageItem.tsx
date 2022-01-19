@@ -7,10 +7,10 @@ import { useDispatch } from "react-redux";
 
 interface Props {
   item: {
-    id: Number;
-    name: String;
-    url: String;
-    cropped: String | null;
+    id: number;
+    name: string;
+    url: string;
+    cropped: string | null;
   };
 }
 
