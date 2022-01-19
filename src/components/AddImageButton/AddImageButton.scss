@@ -1,0 +1,15 @@
+@import "../../App.scss";
+
+.add-image-button {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: $light-blue;
+  padding: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $light-blue;
+    color: $dark-blue;
+  }
+}

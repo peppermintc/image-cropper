@@ -2,6 +2,8 @@ $dark-blue: #292c34;
 $light-blue: #7fe7dc;
 
 .App {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   background-color: $dark-blue;
   color: white;
