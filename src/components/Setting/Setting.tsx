@@ -1,4 +1,5 @@
 import _ from "lodash";
+import { useEffect } from "react";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as imageActionCreators from "../../store/actions/imageActionCreators";
@@ -14,6 +15,13 @@ const Setting = () => {
     imageActionCreators,
     dispatch
   );
+
+  useEffect(() => {
+    if (!currentImage) return;
+
+    if (currentImage.cropUrl) activateDownloadCropButton();
+    else deactivateDownloadCropButton();
+  }, [currentImage]);
 
   const onApplyCropButtonClick = () => {
     const getCropUrl = () => {
@@ -78,6 +86,22 @@ const Setting = () => {
     downloadOriginalImage(currentImage.url, newName);
   };
 
+  const activateDownloadCropButton = () => {
+    const downloadCropButton: HTMLButtonElement | null = document.querySelector(
+      ".download-crop-button"
+    );
+    if (!downloadCropButton) return;
+    downloadCropButton.disabled = false;
+  };
+
+  const deactivateDownloadCropButton = () => {
+    const downloadCropButton: HTMLButtonElement | null = document.querySelector(
+      ".download-crop-button"
+    );
+    if (!downloadCropButton) return;
+    downloadCropButton.disabled = true;
+  };
+
   return (
     <div className="setting-container">
       <div className="individual-image-setting">
@@ -91,7 +115,10 @@ const Setting = () => {
             type="text"
             placeholder="Cropped image name"
           />
-          <button onClick={onDownloadCropButtonClick}>
+          <button
+            className="download-crop-button"
+            onClick={onDownloadCropButtonClick}
+          >
             Download cropped Image
           </button>
         </div>
