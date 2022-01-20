@@ -27,6 +27,10 @@
         outline: none;
       }
 
+      &:hover {
+        opacity: 0.8;
+      }
+
       .check-icon {
         margin-left: 10px;
         width: 16px;

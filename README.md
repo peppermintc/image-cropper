@@ -2,7 +2,9 @@
 
 Current state
 
-<img src="./src/img/current-state.png"/>
+<img src="./src/img/current-state-1.png"/>
+<img src="./src/img/current-state-2.png"/>
+<img src="./src/img/current-state-3.png"/>
 
 ### ongoing
 
@@ -14,13 +16,9 @@ download image
 
 ### todo
 
-set image name on download
+upload Image
 
 ##### cropper
-
-- make cropped image with rect coordinates
-- save cropped to redux
-- show cropped on preview section
 
 ##### image list
 
