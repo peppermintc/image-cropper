@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/image-cropper/static/css/main.9d83580a.css",
+    "main.js": "/image-cropper/static/js/main.0e26396b.js",
+    "static/media/delete-icon.png": "/image-cropper/static/media/delete-icon.7729b9c296eab6db7f29.png",
+    "static/media/image-icon.png": "/image-cropper/static/media/image-icon.820bae8bf501a19c0598.png",
+    "index.html": "/image-cropper/index.html",
+    "main.9d83580a.css.map": "/image-cropper/static/css/main.9d83580a.css.map",
+    "main.0e26396b.js.map": "/image-cropper/static/js/main.0e26396b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d83580a.css",
+    "static/js/main.0e26396b.js"
+  ]
+}
