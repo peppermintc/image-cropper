@@ -4,9 +4,13 @@ const Setting = () => {
   const onApplyCropButtonClick = () => {
     const previewCanvasElement: HTMLCanvasElement | null =
       document.querySelector("#preview-canvas-element");
-    if (!previewCanvasElement) return;
+    const downloadLink: HTMLElement | null =
+      document.getElementById("download-link");
+    if (!previewCanvasElement || !downloadLink) return;
     const croppedUrl = previewCanvasElement.toDataURL();
-    // console.log();
+    downloadLink.setAttribute("download", "no-name-image");
+    downloadLink.setAttribute("href", croppedUrl);
+    downloadLink.click();
   };
 
   return (
@@ -34,6 +38,14 @@ const Setting = () => {
       <div className="keyboard-shortcuts-container">
         <div className="title">Keybord shortcuts</div>
       </div>
+
+      <a
+        id="download-link"
+        style={{ display: "none" }}
+        href={process.env.PUBLIC_URL}
+      >
+        hidden download link
+      </a>
     </div>
   );
 };

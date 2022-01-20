@@ -1,3 +1,7 @@
+import KoalaImage from "../../img/sample/koala.jpeg";
+import BirdImage from "../../img/sample/bird1.jpeg";
+import DogImage from "../../img/sample/dog1.jpeg";
+
 interface actionInterface {
   type: string;
   payload: [];
@@ -9,19 +13,22 @@ const initialState = {
     {
       id: 0,
       name: "sample-image-0.jpg",
-      url: "https://hs.sbcounty.gov/cn/Photo%20Gallery/Sample%20Picture%20-%20Koala.jpg",
+      url: KoalaImage,
+      // url: "https://hs.sbcounty.gov/cn/Photo%20Gallery/Sample%20Picture%20-%20Koala.jpg",
       cropped: null,
     },
     {
       id: 1,
       name: "sample-image-1.jpg",
-      url: "https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg",
+      url: BirdImage,
+      // url: "https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg",
       cropped: null,
     },
     {
       id: 2,
       name: "sample-image-2.jpg",
-      url: "https://i.pinimg.com/originals/ab/27/d8/ab27d8db9a683e046325631cb80dd4d4.jpg",
+      url: DogImage,
+      // url: "https://i.pinimg.com/originals/ab/27/d8/ab27d8db9a683e046325631cb80dd4d4.jpg",
       cropped: null,
     },
   ],
