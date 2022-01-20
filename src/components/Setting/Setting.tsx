@@ -61,7 +61,6 @@ const Setting = () => {
       downloadLink.setAttribute("download", imageName);
       downloadLink.setAttribute("href", url);
       downloadLink.click();
-      console.log("click");
     };
 
     downloadOriginalImage(currentImage.url, "NONAME");
