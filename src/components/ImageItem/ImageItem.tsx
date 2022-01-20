@@ -10,7 +10,7 @@ interface Props {
     id: number;
     name: string;
     url: string;
-    cropped: string | null;
+    cropUrl: string | null;
   };
 }
 

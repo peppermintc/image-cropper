@@ -1,16 +1,56 @@
+import _ from "lodash";
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as imageActionCreators from "../../store/actions/imageActionCreators";
 import "./Setting.scss";
 
 const Setting = () => {
+  const { currentImage, imageList } = useSelector(
+    (state: RootStateOrAny) => state.image
+  );
+
+  const dispatch = useDispatch();
+  const { updateCurrentImage, updateImageList } = bindActionCreators(
+    imageActionCreators,
+    dispatch
+  );
+
   const onApplyCropButtonClick = () => {
-    const previewCanvasElement: HTMLCanvasElement | null =
-      document.querySelector("#preview-canvas-element");
-    const downloadLink: HTMLElement | null =
-      document.getElementById("download-link");
-    if (!previewCanvasElement || !downloadLink) return;
-    const croppedUrl = previewCanvasElement.toDataURL();
-    downloadLink.setAttribute("download", "no-name-image");
-    downloadLink.setAttribute("href", croppedUrl);
-    downloadLink.click();
+    const getCropUrl = () => {
+      const previewCanvasElement: HTMLCanvasElement | null =
+        document.querySelector("#preview-canvas-element");
+      if (!previewCanvasElement) return;
+      return previewCanvasElement.toDataURL();
+    };
+
+    const newCropUrl = getCropUrl();
+
+    const newCurrentImage = {
+      ...currentImage,
+      cropUrl: newCropUrl,
+    };
+
+    updateCurrentImage(newCurrentImage);
+
+    const newImageList: any = _.map(imageList, (image) => {
+      if (image.id !== newCurrentImage.id) return image;
+      return newCurrentImage;
+    });
+
+    updateImageList(newImageList);
+  };
+
+  const onDownloadCropButtonClick = () => {
+    const downloadCropImage = (cropUrl: string, imageName: string) => {
+      const downloadLink: HTMLElement | null =
+        document.getElementById("download-link");
+      if (!downloadLink) return;
+      downloadLink.setAttribute("download", imageName);
+      downloadLink.setAttribute("href", cropUrl);
+      downloadLink.click();
+    };
+
+    downloadCropImage(currentImage.cropUrl, "NONAME");
   };
 
   return (
@@ -22,7 +62,9 @@ const Setting = () => {
         </button>
         <div className="input-button-group">
           <input type="text" placeholder="Cropped image name" />
-          <button>Download cropped Image</button>
+          <button onClick={onDownloadCropButtonClick}>
+            Download cropped Image
+          </button>
         </div>
         <div className="input-button-group">
           <input type="text" placeholder="Original image name" />

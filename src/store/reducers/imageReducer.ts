@@ -14,22 +14,19 @@ const initialState = {
       id: 0,
       name: "sample-image-0.jpg",
       url: KoalaImage,
-      // url: "https://hs.sbcounty.gov/cn/Photo%20Gallery/Sample%20Picture%20-%20Koala.jpg",
-      cropped: null,
+      cropUrl: null,
     },
     {
       id: 1,
       name: "sample-image-1.jpg",
       url: BirdImage,
-      // url: "https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg",
-      cropped: null,
+      cropUrl: null,
     },
     {
       id: 2,
       name: "sample-image-2.jpg",
       url: DogImage,
-      // url: "https://i.pinimg.com/originals/ab/27/d8/ab27d8db9a683e046325631cb80dd4d4.jpg",
-      cropped: null,
+      cropUrl: null,
     },
   ],
 };
@@ -40,6 +37,11 @@ const imageReducer = (state = initialState, action: actionInterface) => {
       return {
         ...state,
         currentImage: action.payload,
+      };
+    case "UPDATE_IMAGE_LIST":
+      return {
+        ...state,
+        imageList: action.payload,
       };
     case "ADD_IMAGE":
       return {

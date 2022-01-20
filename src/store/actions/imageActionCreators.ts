@@ -1,10 +1,11 @@
+import _ from "lodash";
 import { Dispatch } from "redux";
 
 interface currentImageInterface {
   id: number;
   name: string;
   url: string;
-  cropped: string | null;
+  cropUrl: string | null;
 }
 
 // Action creators
@@ -13,6 +14,15 @@ export const updateCurrentImage = (newCurrentImage: currentImageInterface) => {
     await dispatch({
       type: "UPDATE_CURRENT_IMAGE",
       payload: newCurrentImage,
+    });
+  };
+};
+
+export const updateImageList = (newImageList: []) => {
+  return async (dispatch: Dispatch) => {
+    await dispatch({
+      type: "UPDATE_IMAGE_LIST",
+      payload: newImageList,
     });
   };
 };
