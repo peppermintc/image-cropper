@@ -4,12 +4,6 @@
   width: 500px;
   border-left: 1px solid $light-blue;
 
-  .save-header {
-    color: $light-blue;
-    padding: 15px;
-    border-bottom: 1px solid $light-blue;
-  }
-
   .save-content {
     padding: 15px;
     display: flex;
@@ -21,11 +15,45 @@
       color: $light-blue;
     }
 
-    button {
+    .input-button-group {
+      height: 35px;
+      display: flex;
+
+      .image-name-input {
+        flex: 1;
+        border: 1px solid $light-blue;
+        height: 100%;
+        border-left: none;
+        padding: 0 10px;
+        border-radius: 4px 0 0 4px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        width: 190px;
+        background-color: $light-blue;
+        color: $dark-blue;
+        border: 1px solid $light-blue;
+        border-radius: 0 4px 4px 0;
+        border-left: none;
+        height: 100%;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $dark-blue;
+          color: $light-blue;
+        }
+      }
+    }
+
+    .button-asdfa {
+      height: 100%;
       border: 1px solid $light-blue;
       background-color: $dark-blue;
       color: $light-blue;
-      padding: 15px;
       cursor: pointer;
       border-radius: 4px;
 
@@ -34,12 +62,5 @@
         color: $dark-blue;
       }
     }
-  }
-
-  .setting-header {
-    color: $light-blue;
-    padding: 15px;
-    border-top: 1px solid $light-blue;
-    border-bottom: 1px solid $light-blue;
   }
 }
