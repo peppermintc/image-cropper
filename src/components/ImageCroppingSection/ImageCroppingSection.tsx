@@ -1,4 +1,5 @@
 import { RootStateOrAny, useSelector } from "react-redux";
+import CropPreview from "../CropPreview/CropPreview";
 import ImageCropper from "../ImageCropper/ImageCropper";
 import "./ImageCroppingSection.scss";
 
@@ -8,10 +9,7 @@ const ImageCroppingSection = () => {
   return (
     <div className="image-cropper-container">
       <ImageCropper currentImage={currentImage} />
-      <div className="cropped-preview">
-        <div className="title">Crop preview</div>
-        <div className="cropped-image-container"></div>
-      </div>
+      <CropPreview currentImage={currentImage} />
     </div>
   );
 };
