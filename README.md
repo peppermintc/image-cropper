@@ -10,9 +10,11 @@ crop image
 
 ### done
 
-preview
+download image
 
 ### todo
+
+set image name on download
 
 ##### cropper
 
