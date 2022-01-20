@@ -1,7 +1,14 @@
+@import "../../App.scss";
+
 .image-item-container {
   display: flex;
   padding: 15px;
   cursor: pointer;
+  align-items: center;
+
+  &:hover {
+    color: $light-blue;
+  }
 
   .image-icon {
     width: 18px;
@@ -13,7 +20,8 @@
   }
 
   .delete-icon {
-    width: 18px;
+    width: 10px;
+    height: 10px;
     cursor: pointer;
   }
 }
