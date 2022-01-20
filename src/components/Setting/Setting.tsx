@@ -50,7 +50,13 @@ const Setting = () => {
       downloadLink.click();
     };
 
-    downloadCropImage(currentImage.cropUrl, "NONAME");
+    const inputElement: HTMLInputElement | null = document.querySelector(
+      "#crop-image-name-input"
+    );
+    if (!inputElement) return;
+    const newName = inputElement.value;
+
+    downloadCropImage(currentImage.cropUrl, newName);
   };
 
   const onDownloadOriginalButtonClick = () => {
@@ -63,7 +69,13 @@ const Setting = () => {
       downloadLink.click();
     };
 
-    downloadOriginalImage(currentImage.url, "NONAME");
+    const inputElement: HTMLInputElement | null = document.querySelector(
+      "#original-image-name-input"
+    );
+    if (!inputElement) return;
+    const newName = inputElement.value;
+
+    downloadOriginalImage(currentImage.url, newName);
   };
 
   return (
@@ -74,13 +86,21 @@ const Setting = () => {
           Apply crop
         </button>
         <div className="input-button-group">
-          <input type="text" placeholder="Cropped image name" />
+          <input
+            id="crop-image-name-input"
+            type="text"
+            placeholder="Cropped image name"
+          />
           <button onClick={onDownloadCropButtonClick}>
             Download cropped Image
           </button>
         </div>
         <div className="input-button-group">
-          <input type="text" placeholder="Original image name" />
+          <input
+            id="original-image-name-input"
+            type="text"
+            placeholder="Original image name"
+          />
           <button onClick={onDownloadOriginalButtonClick}>
             Download original Image
           </button>
