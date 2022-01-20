@@ -8,7 +8,12 @@ interface actionInterface {
 }
 
 const initialState = {
-  currentImage: null,
+  currentImage: {
+    id: 0,
+    name: "sample-image-0.jpg",
+    url: KoalaImage,
+    cropUrl: null,
+  },
   imageList: [
     {
       id: 0,
