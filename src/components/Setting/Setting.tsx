@@ -53,6 +53,20 @@ const Setting = () => {
     downloadCropImage(currentImage.cropUrl, "NONAME");
   };
 
+  const onDownloadOriginalButtonClick = () => {
+    const downloadOriginalImage = (url: string, imageName: string) => {
+      const downloadLink: HTMLElement | null =
+        document.getElementById("download-link");
+      if (!downloadLink) return;
+      downloadLink.setAttribute("download", imageName);
+      downloadLink.setAttribute("href", url);
+      downloadLink.click();
+      console.log("click");
+    };
+
+    downloadOriginalImage(currentImage.url, "NONAME");
+  };
+
   return (
     <div className="setting-container">
       <div className="individual-image-setting">
@@ -68,7 +82,9 @@ const Setting = () => {
         </div>
         <div className="input-button-group">
           <input type="text" placeholder="Original image name" />
-          <button>Download original Image</button>
+          <button onClick={onDownloadOriginalButtonClick}>
+            Download original Image
+          </button>
         </div>
       </div>
 
