@@ -4,6 +4,7 @@ import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as imageActionCreators from "../../store/actions/imageActionCreators";
 import "./Setting.scss";
+import CheckIcon from "../../img/check-icon.png";
 
 const Setting = () => {
   const { currentImage, imageList } = useSelector(
@@ -108,6 +109,9 @@ const Setting = () => {
         <div className="title">Individual Image</div>
         <button className="setting-button" onClick={onApplyCropButtonClick}>
           Apply crop
+          {currentImage?.cropUrl && (
+            <img className="check-icon" src={CheckIcon} alt="check" />
+          )}
         </button>
         <div className="input-button-group">
           <input
@@ -116,7 +120,9 @@ const Setting = () => {
             placeholder="Cropped image name"
           />
           <button
-            className="download-crop-button"
+            className={`download-crop-button ${
+              currentImage?.cropUrl ? "" : "disabled"
+            }`}
             onClick={onDownloadCropButtonClick}
           >
             Download cropped Image
