@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/image-cropper/static/css/main.9d83580a.css",
-    "main.js": "/image-cropper/static/js/main.7bdf8a6d.js",
-    "static/media/delete-icon.png": "/image-cropper/static/media/delete-icon.7729b9c296eab6db7f29.png",
+    "main.css": "/image-cropper/static/css/main.63c1be4d.css",
+    "main.js": "/image-cropper/static/js/main.f541078e.js",
     "static/media/image-icon.png": "/image-cropper/static/media/image-icon.820bae8bf501a19c0598.png",
+    "static/media/delete-icon.png": "/image-cropper/static/media/delete-icon.7b60ffec538438f63aba.png",
     "index.html": "/image-cropper/index.html",
-    "main.9d83580a.css.map": "/image-cropper/static/css/main.9d83580a.css.map",
-    "main.7bdf8a6d.js.map": "/image-cropper/static/js/main.7bdf8a6d.js.map"
+    "main.63c1be4d.css.map": "/image-cropper/static/css/main.63c1be4d.css.map",
+    "main.f541078e.js.map": "/image-cropper/static/js/main.f541078e.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d83580a.css",
-    "static/js/main.7bdf8a6d.js"
+    "static/css/main.63c1be4d.css",
+    "static/js/main.f541078e.js"
   ]
 }
