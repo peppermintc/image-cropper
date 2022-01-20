@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/image-cropper/static/css/main.e85f2117.css",
-    "main.js": "/image-cropper/static/js/main.d77081fa.js",
+    "main.css": "/image-cropper/static/css/main.ddecf593.css",
+    "main.js": "/image-cropper/static/js/main.818f9213.js",
     "static/media/koala.jpeg": "/image-cropper/static/media/koala.acbd7435f0f8ea16504d.jpeg",
     "static/media/dog1.jpeg": "/image-cropper/static/media/dog1.bbd6b04a969277770380.jpeg",
     "static/media/bird1.jpeg": "/image-cropper/static/media/bird1.773598b7ac1525e0afb7.jpeg",
+    "static/media/check-icon.png": "/image-cropper/static/media/check-icon.b38346ceb0730c97b9c4.png",
     "static/media/image-icon.png": "/image-cropper/static/media/image-icon.820bae8bf501a19c0598.png",
     "static/media/delete-icon.png": "/image-cropper/static/media/delete-icon.7b60ffec538438f63aba.png",
     "index.html": "/image-cropper/index.html",
-    "main.e85f2117.css.map": "/image-cropper/static/css/main.e85f2117.css.map",
-    "main.d77081fa.js.map": "/image-cropper/static/js/main.d77081fa.js.map"
+    "main.ddecf593.css.map": "/image-cropper/static/css/main.ddecf593.css.map",
+    "main.818f9213.js.map": "/image-cropper/static/js/main.818f9213.js.map"
   },
   "entrypoints": [
-    "static/css/main.e85f2117.css",
-    "static/js/main.d77081fa.js"
+    "static/css/main.ddecf593.css",
+    "static/js/main.818f9213.js"
   ]
 }
