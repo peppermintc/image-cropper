@@ -17,6 +17,11 @@
     background-color: $dark-gray;
     gap: 10px;
 
+    .save-content-header {
+      margin: 8px 0;
+      color: $light-blue;
+    }
+
     button {
       border: 1px solid $light-blue;
       background-color: $dark-blue;
