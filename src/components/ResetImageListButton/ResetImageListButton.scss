@@ -1,0 +1,15 @@
+@import "../../App.scss";
+
+.reset-image-list-button {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: $light-blue;
+  padding: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $light-blue;
+    color: $dark-blue;
+  }
+}

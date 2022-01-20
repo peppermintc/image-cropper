@@ -89,8 +89,6 @@ const ImageCropper: React.FC<Props> = ({ currentImage }) => {
         originalCanvasElement.height
       );
     };
-    // const cropImageUrl = originalCanvasElement.toDataURL("image/png");
-    // console.log(cropImageUrl);
   }, [currentImage, locB]);
 
   const onImageLoad = () => {

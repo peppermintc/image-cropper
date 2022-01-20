@@ -1,5 +1,6 @@
-import AddImageButton from "../AddImageButton/AddImageButton";
 import ImageList from "../ImageList/ImageList";
+import AddImageButton from "../AddImageButton/AddImageButton";
+import ResetImageListButton from "../ResetImageListButton/ResetImageListButton";
 import "./SideBar.scss";
 
 const SideBar: React.FC = () => {
@@ -7,6 +8,7 @@ const SideBar: React.FC = () => {
     <div className="side-bar">
       <ImageList />
       <AddImageButton />
+      <ResetImageListButton />
     </div>
   );
 };

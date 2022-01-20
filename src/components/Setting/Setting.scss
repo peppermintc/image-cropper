@@ -3,29 +3,40 @@
 .setting-container {
   width: 500px;
   border-left: 1px solid $light-blue;
+  padding: 15px;
 
-  .save-content {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    .save-content-header {
-      margin: 8px 0;
+  .individual-image-setting {
+    .title {
       color: $light-blue;
+      margin-bottom: 15px;
+    }
+
+    .setting-button {
+      width: 100%;
+      height: 40px;
+      border: 1px solid $light-blue;
+      border-radius: 4px;
+      background-color: $dark-blue;
+      color: $light-blue;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $light-blue;
+        color: $dark-blue;
+      }
     }
 
     .input-button-group {
-      height: 35px;
+      width: 100%;
+      height: 40px;
       display: flex;
 
-      .image-name-input {
+      input {
         flex: 1;
-        border: 1px solid $light-blue;
         height: 100%;
-        border-left: none;
-        padding: 0 10px;
+        border: 1px solid $light-blue;
         border-radius: 4px 0 0 4px;
+        padding: 0 10px;
 
         &:focus {
           outline: none;
@@ -48,19 +59,34 @@
         }
       }
     }
+  }
 
-    .button-asdfa {
-      height: 100%;
+  .all-image-setting {
+    .title {
+      color: $light-blue;
+      margin: 15px 0;
+    }
+
+    .setting-button {
+      width: 100%;
+      height: 40px;
       border: 1px solid $light-blue;
+      border-radius: 4px;
       background-color: $dark-blue;
       color: $light-blue;
       cursor: pointer;
-      border-radius: 4px;
 
       &:hover {
         background-color: $light-blue;
         color: $dark-blue;
       }
+    }
+  }
+
+  .keyboard-shortcuts-container {
+    .title {
+      color: $light-blue;
+      margin: 15px 0;
     }
   }
 }
