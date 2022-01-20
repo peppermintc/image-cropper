@@ -79,10 +79,10 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    background-color: $dark-gray;
 
     #preview-canvas-element {
       position: absolute;
-      background-color: yellow;
       border: 1px solid white;
     }
   }

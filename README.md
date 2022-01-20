@@ -10,14 +10,12 @@ crop image
 
 ### done
 
-set canvas size on img src change
+preview
 
 ### todo
 
 ##### cropper
 
-- draw rectangle on canvas
-- save rectangle coordinates
 - make cropped image with rect coordinates
 - save cropped to redux
 - show cropped on preview section
