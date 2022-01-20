@@ -61,3 +61,29 @@
     }
   }
 }
+
+.cropped-preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    padding: 15px;
+    border-top: 1px solid $light-blue;
+    border-bottom: 1px solid $light-blue;
+  }
+
+  .cropped-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    #preview-canvas-element {
+      position: absolute;
+      background-color: yellow;
+      border: 1px solid white;
+    }
+  }
+}

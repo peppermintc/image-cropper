@@ -62,6 +62,35 @@ const ImageCropper: React.FC<Props> = ({ currentImage }) => {
     drawRect({ x: locA.x, y: locA.y, w: locB.x - locA.x, h: locB.y - locA.y });
   }, [locB, ctx]);
 
+  useEffect(() => {
+    const originalCanvasElement: HTMLCanvasElement | null =
+      document.querySelector("#canvas-element");
+    if (!originalCanvasElement) return;
+
+    const previewImageElement = new Image(
+      originalCanvasElement.width,
+      originalCanvasElement.height
+    );
+    if (!currentImage) return;
+    previewImageElement.src = currentImage.url;
+    previewImageElement.onload = () => {
+      const previewCanvasElement: HTMLCanvasElement | null =
+        document.querySelector("#preview-canvas-element");
+      if (!previewCanvasElement) return;
+      const previewCtx = previewCanvasElement?.getContext("2d");
+      if (!locA || !locB) return;
+      previewCanvasElement.width = locB.x - locA.x;
+      previewCanvasElement.height = locB.y - locA.y;
+      previewCtx?.drawImage(
+        previewImageElement,
+        -locA.x,
+        -locA.y,
+        originalCanvasElement.width,
+        originalCanvasElement.height
+      );
+    };
+  }, [currentImage, locB]);
+
   const onImageLoad = () => {
     if (!currentImage) return;
 
@@ -160,6 +189,13 @@ const ImageCropper: React.FC<Props> = ({ currentImage }) => {
           </div>
         </div>
       )}
+
+      <div className="cropped-preview">
+        <div className="title">Crop preview</div>
+        <div className="cropped-image-container">
+          <canvas id="preview-canvas-element" width="0" height="0"></canvas>
+        </div>
+      </div>
     </React.Fragment>
   );
 };
