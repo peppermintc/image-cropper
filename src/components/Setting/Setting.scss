@@ -3,4 +3,39 @@
 .setting-container {
   width: 500px;
   border-left: 1px solid $light-blue;
+
+  .save-header {
+    color: $light-blue;
+    padding: 15px;
+    border-bottom: 1px solid $light-blue;
+  }
+
+  .save-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: $dark-gray;
+    gap: 10px;
+
+    button {
+      border: 1px solid $light-blue;
+      background-color: $dark-blue;
+      color: $light-blue;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: $light-blue;
+        color: $dark-blue;
+      }
+    }
+  }
+
+  .setting-header {
+    color: $light-blue;
+    padding: 15px;
+    border-top: 1px solid $light-blue;
+    border-bottom: 1px solid $light-blue;
+  }
 }
