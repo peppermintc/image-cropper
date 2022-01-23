@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import * as imageActionCreators from "../../store/actions/imageActionCreators";
 import "./Setting.scss";
 import CheckIcon from "../../img/check-icon.png";
-import { Image } from "../../store/reducers/imageReducer";
+import { ImageItem } from "../../store/reducers/imageReducer";
 import { RootState } from "../../store/reducers";
 
 const Setting = () => {
@@ -43,7 +43,7 @@ const Setting = () => {
 
     updateCurrentImage(newCurrentImage);
 
-    const newImageList: Image[] = _.map(imageList, (image) => {
+    const newImageList: ImageItem[] = _.map(imageList, (image) => {
       if (image.id !== newCurrentImage.id) return image;
       return newCurrentImage;
     });

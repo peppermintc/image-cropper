@@ -1,19 +1,19 @@
 import _ from "lodash";
 import { MouseEvent } from "react";
-import "./ImageItem.scss";
+import "./ImageListItem.scss";
 import ImageIcon from "../../img/image-icon.png";
 import deleteIcon from "../../img/delete-icon.png";
 import { bindActionCreators } from "redux";
 import * as imageActionCreators from "../../store/actions/imageActionCreators";
 import { useDispatch, useSelector } from "react-redux";
-import { Image } from "../../store/reducers/imageReducer";
+import { ImageItem } from "../../store/reducers/imageReducer";
 import { RootState } from "../../store/reducers";
 
 interface Props {
-  item: Image;
+  item: ImageItem;
 }
 
-const ImageItem = ({ item }: Props) => {
+const ImageListItem = ({ item }: Props) => {
   const { imageList } = useSelector((state: RootState) => state.image);
 
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const ImageItem = ({ item }: Props) => {
   const onDeleteClick = (e: MouseEvent<HTMLElement>) => {
     e.stopPropagation();
 
-    const newImageList: Image[] = _.filter(
+    const newImageList: ImageItem[] = _.filter(
       imageList,
       (image) => image.id !== item.id
     );
@@ -51,4 +51,4 @@ const ImageItem = ({ item }: Props) => {
   );
 };
 
-export default ImageItem;
+export default ImageListItem;

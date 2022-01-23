@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Image } from "../../store/reducers/imageReducer";
+import { ImageItem } from "../../store/reducers/imageReducer";
 import "./CropPreview.scss";
 
 interface Props {
-  currentImage: Image;
+  currentImage: ImageItem;
 }
 
 const CropPreview = ({ currentImage }: Props) => {

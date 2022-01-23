@@ -1,8 +1,8 @@
 import { Dispatch } from "redux";
-import { Image } from "../reducers/imageReducer";
+import { ImageItem } from "../reducers/imageReducer";
 
 // Action creators
-export const updateCurrentImage = (newCurrentImage: Image) => {
+export const updateCurrentImage = (newCurrentImage: ImageItem) => {
   return async (dispatch: Dispatch) => {
     await dispatch({
       type: "UPDATE_CURRENT_IMAGE",
@@ -11,7 +11,7 @@ export const updateCurrentImage = (newCurrentImage: Image) => {
   };
 };
 
-export const updateImageList = (newImageList: Image[]) => {
+export const updateImageList = (newImageList: ImageItem[]) => {
   return async (dispatch: Dispatch) => {
     await dispatch({
       type: "UPDATE_IMAGE_LIST",

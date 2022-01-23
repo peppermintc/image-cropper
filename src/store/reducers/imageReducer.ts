@@ -2,7 +2,7 @@ import KoalaImage from "../../img/sample/koala.jpeg";
 import BirdImage from "../../img/sample/bird1.jpeg";
 import DogImage from "../../img/sample/dog1.jpeg";
 
-export interface Image {
+export interface ImageItem {
   id: number;
   name: string;
   url: string;
@@ -10,8 +10,8 @@ export interface Image {
 }
 
 export interface ImageState {
-  currentImage: Image;
-  imageList: Image[];
+  currentImage: ImageItem;
+  imageList: ImageItem[];
 }
 
 interface Action {

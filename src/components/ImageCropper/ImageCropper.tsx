@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState, MouseEvent } from "react";
+import { useEffect, useState, MouseEvent } from "react";
 import ImageIcon from "../../img/image-icon.png";
-import { Image } from "../../store/reducers/imageReducer";
+import { ImageItem } from "../../store/reducers/imageReducer";
 import "./ImageCropper.scss";
 
 interface Props {
-  currentImage: Image;
+  currentImage: ImageItem;
 }
 
 interface ImageSize {

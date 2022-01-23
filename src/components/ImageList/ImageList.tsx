@@ -1,5 +1,5 @@
 import _ from "lodash";
-import ImageItem from "../ImageItem/ImageItem";
+import ImageListItem from "../ImageItem/ImageListItem";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/reducers";
 import "./ImageList.scss";
@@ -12,7 +12,7 @@ const ImageList = () => {
       <div className="title">Image List</div>
       <div className="image-list">
         {_.map(imageList, (item, index) => (
-          <ImageItem key={index} item={item} />
+          <ImageListItem key={index} item={item} />
         ))}
       </div>
       <div className="status">
