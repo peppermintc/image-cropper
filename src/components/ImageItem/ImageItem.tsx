@@ -1,4 +1,5 @@
 import _ from "lodash";
+import { MouseEvent } from "react";
 import "./ImageItem.scss";
 import ImageIcon from "../../img/image-icon.png";
 import deleteIcon from "../../img/delete-icon.png";
@@ -26,7 +27,7 @@ const ImageItem = ({ item }: Props) => {
     updateCurrentImage(newCurrentImage);
   };
 
-  const onDeleteClick = (e: React.SyntheticEvent) => {
+  const onDeleteClick = (e: MouseEvent<HTMLElement>) => {
     e.stopPropagation();
 
     const newImageList: Image[] = _.filter(

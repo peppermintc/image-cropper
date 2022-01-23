@@ -15,12 +15,12 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </>,
   document.getElementById("root")
 );

@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, MouseEvent } from "react";
 import ImageIcon from "../../img/image-icon.png";
 import { Image } from "../../store/reducers/imageReducer";
 import "./ImageCropper.scss";
@@ -8,7 +8,7 @@ interface Props {
   currentImage: Image;
 }
 
-interface ImageSizeInterface {
+interface ImageSize {
   width: number;
   height: number;
 }
@@ -90,7 +90,7 @@ const ImageCropper = ({ currentImage }: Props) => {
   const onImageLoad = () => {
     if (!currentImage) return;
 
-    const getImageSize = (): ImageSizeInterface | undefined => {
+    const getImageSize = (): ImageSize | undefined => {
       const imageElement: HTMLImageElement | null =
         document.querySelector("#image-element");
       if (!imageElement) return;
@@ -108,28 +108,22 @@ const ImageCropper = ({ currentImage }: Props) => {
       canvasElement.height = newHeight;
     };
 
-    const imageSize: ImageSizeInterface | undefined = getImageSize();
+    const imageSize: ImageSize | undefined = getImageSize();
     if (!imageSize) return;
     setCanvasSize(imageSize.width, imageSize.height);
   };
 
-  const onCanvasMouseDown = (
-    e: React.MouseEvent<HTMLCanvasElement, MouseEvent>
-  ) => {
+  const onCanvasMouseDown = (e: MouseEvent<HTMLCanvasElement>) => {
     setIsCropping(true);
     setLocA(getMousePosition(e));
   };
 
-  const onCanvasMouseMove = (
-    e: React.MouseEvent<HTMLCanvasElement, MouseEvent>
-  ) => {
+  const onCanvasMouseMove = (e: MouseEvent<HTMLCanvasElement>) => {
     if (!isCropping) return;
     setLocB(getMousePosition(e));
   };
 
-  const onCanvasMouseUp = (
-    e: React.MouseEvent<HTMLCanvasElement, MouseEvent>
-  ) => {
+  const onCanvasMouseUp = (e: MouseEvent<HTMLCanvasElement>) => {
     setIsCropping(false);
   };
 
@@ -137,9 +131,7 @@ const ImageCropper = ({ currentImage }: Props) => {
     setIsCropping(false);
   };
 
-  const getMousePosition = (
-    e: React.MouseEvent<HTMLCanvasElement, MouseEvent>
-  ) => {
+  const getMousePosition = (e: MouseEvent<HTMLCanvasElement>) => {
     const canvasElement: HTMLCanvasElement | null =
       document.querySelector("#canvas-element");
     if (!canvasElement) return;
@@ -151,7 +143,7 @@ const ImageCropper = ({ currentImage }: Props) => {
   };
 
   return (
-    <React.Fragment>
+    <>
       {currentImage && (
         <div className="image-cropper">
           <div className="image-name">{currentImage.name}</div>
@@ -192,7 +184,7 @@ const ImageCropper = ({ currentImage }: Props) => {
           <canvas id="preview-canvas-element" width="0" height="0"></canvas>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
