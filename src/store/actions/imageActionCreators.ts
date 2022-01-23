@@ -1,14 +1,8 @@
 import { Dispatch } from "redux";
-
-interface currentImageInterface {
-  id: number;
-  name: string;
-  url: string;
-  cropUrl: string | null;
-}
+import { Image } from "../reducers/imageReducer";
 
 // Action creators
-export const updateCurrentImage = (newCurrentImage: currentImageInterface) => {
+export const updateCurrentImage = (newCurrentImage: Image) => {
   return async (dispatch: Dispatch) => {
     await dispatch({
       type: "UPDATE_CURRENT_IMAGE",
@@ -17,7 +11,7 @@ export const updateCurrentImage = (newCurrentImage: currentImageInterface) => {
   };
 };
 
-export const updateImageList = (newImageList: []) => {
+export const updateImageList = (newImageList: Image[]) => {
   return async (dispatch: Dispatch) => {
     await dispatch({
       type: "UPDATE_IMAGE_LIST",

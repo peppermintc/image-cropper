@@ -1,14 +1,16 @@
 import _ from "lodash";
 import { useEffect } from "react";
-import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as imageActionCreators from "../../store/actions/imageActionCreators";
 import "./Setting.scss";
 import CheckIcon from "../../img/check-icon.png";
+import { Image } from "../../store/reducers/imageReducer";
+import { RootState } from "../../store/reducers";
 
 const Setting = () => {
   const { currentImage, imageList } = useSelector(
-    (state: RootStateOrAny) => state.image
+    (state: RootState) => state.image
   );
 
   const dispatch = useDispatch();
@@ -25,10 +27,10 @@ const Setting = () => {
   }, [currentImage]);
 
   const onApplyCropButtonClick = () => {
-    const getCropUrl = () => {
+    const getCropUrl = (): string | null => {
       const previewCanvasElement: HTMLCanvasElement | null =
         document.querySelector("#preview-canvas-element");
-      if (!previewCanvasElement) return;
+      if (!previewCanvasElement) return null;
       return previewCanvasElement.toDataURL();
     };
 
@@ -41,7 +43,7 @@ const Setting = () => {
 
     updateCurrentImage(newCurrentImage);
 
-    const newImageList: any = _.map(imageList, (image) => {
+    const newImageList: Image[] = _.map(imageList, (image) => {
       if (image.id !== newCurrentImage.id) return image;
       return newCurrentImage;
     });
@@ -50,12 +52,12 @@ const Setting = () => {
   };
 
   const onDownloadCropButtonClick = () => {
-    const downloadCropImage = (cropUrl: string, imageName: string) => {
+    const downloadCropImage = (cropUrl: string | null, imageName: string) => {
       const downloadLink: HTMLElement | null =
         document.getElementById("download-link");
       if (!downloadLink) return;
       downloadLink.setAttribute("download", imageName);
-      downloadLink.setAttribute("href", cropUrl);
+      downloadLink.setAttribute("href", cropUrl ? cropUrl : "");
       downloadLink.click();
     };
 

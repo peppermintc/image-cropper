@@ -1,15 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import ImageIcon from "../../img/image-icon.png";
+import { Image } from "../../store/reducers/imageReducer";
 import "./ImageCropper.scss";
 
 interface Props {
-  currentImage: {
-    id: number;
-    name: string;
-    url: string;
-    cropped: string | null;
-  } | null;
+  currentImage: Image;
 }
 
 interface ImageSizeInterface {
@@ -17,7 +13,7 @@ interface ImageSizeInterface {
   height: number;
 }
 
-const ImageCropper: React.FC<Props> = ({ currentImage }) => {
+const ImageCropper = ({ currentImage }: Props) => {
   const [isCropping, setIsCropping] = useState(false);
   const [locA, setLocA] = useState<{ x: number; y: number }>();
   const [locB, setLocB] = useState<{ x: number; y: number }>();

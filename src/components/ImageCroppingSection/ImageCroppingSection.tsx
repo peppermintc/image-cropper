@@ -1,9 +1,10 @@
-import { RootStateOrAny, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/reducers";
 import ImageCropper from "../ImageCropper/ImageCropper";
 import "./ImageCroppingSection.scss";
 
 const ImageCroppingSection = () => {
-  const { currentImage } = useSelector((state: RootStateOrAny) => state.image);
+  const { currentImage } = useSelector((state: RootState) => state.image);
 
   return (
     <div className="image-cropper-container">

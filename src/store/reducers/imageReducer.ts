@@ -2,12 +2,24 @@ import KoalaImage from "../../img/sample/koala.jpeg";
 import BirdImage from "../../img/sample/bird1.jpeg";
 import DogImage from "../../img/sample/dog1.jpeg";
 
-interface actionInterface {
+export interface Image {
+  id: number;
+  name: string;
+  url: string;
+  cropUrl: string | null;
+}
+
+export interface ImageState {
+  currentImage: Image;
+  imageList: Image[];
+}
+
+interface Action {
   type: string;
   payload: [];
 }
 
-const initialState = {
+const initialState: ImageState = {
   currentImage: {
     id: 0,
     name: "sample-image-0.jpg",
@@ -36,7 +48,7 @@ const initialState = {
   ],
 };
 
-const imageReducer = (state = initialState, action: actionInterface) => {
+const imageReducer = (state = initialState, action: Action) => {
   switch (action.type) {
     case "UPDATE_CURRENT_IMAGE":
       return {

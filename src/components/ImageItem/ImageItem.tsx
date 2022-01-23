@@ -4,19 +4,16 @@ import ImageIcon from "../../img/image-icon.png";
 import deleteIcon from "../../img/delete-icon.png";
 import { bindActionCreators } from "redux";
 import * as imageActionCreators from "../../store/actions/imageActionCreators";
-import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Image } from "../../store/reducers/imageReducer";
+import { RootState } from "../../store/reducers";
 
 interface Props {
-  item: {
-    id: number;
-    name: string;
-    url: string;
-    cropUrl: string | null;
-  };
+  item: Image;
 }
 
-const ImageItem: React.FC<Props> = ({ item }) => {
-  const { imageList } = useSelector((state: RootStateOrAny) => state.image);
+const ImageItem = ({ item }: Props) => {
+  const { imageList } = useSelector((state: RootState) => state.image);
 
   const dispatch = useDispatch();
   const { updateCurrentImage, updateImageList } = bindActionCreators(
@@ -32,7 +29,7 @@ const ImageItem: React.FC<Props> = ({ item }) => {
   const onDeleteClick = (e: React.SyntheticEvent) => {
     e.stopPropagation();
 
-    const newImageList: any = _.filter(
+    const newImageList: Image[] = _.filter(
       imageList,
       (image) => image.id !== item.id
     );

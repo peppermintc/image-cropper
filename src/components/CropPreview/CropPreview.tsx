@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
+import { Image } from "../../store/reducers/imageReducer";
 import "./CropPreview.scss";
 
 interface Props {
-  currentImage: {
-    id: number;
-    name: string;
-    url: string;
-    cropped: string | null;
-  } | null;
+  currentImage: Image;
 }
 
-const CropPreview: React.FC<Props> = ({ currentImage }) => {
+const CropPreview = ({ currentImage }: Props) => {
   const [canvasElement, setCanvasElement] = useState<HTMLCanvasElement>();
 
   useEffect(() => {

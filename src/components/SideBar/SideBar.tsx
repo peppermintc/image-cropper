@@ -3,7 +3,7 @@ import AddImageButton from "../AddImageButton/AddImageButton";
 import ResetImageListButton from "../ResetImageListButton/ResetImageListButton";
 import "./SideBar.scss";
 
-const SideBar: React.FC = () => {
+const SideBar = () => {
   return (
     <div className="side-bar">
       <ImageList />

@@ -1,10 +1,11 @@
 import _ from "lodash";
 import ImageItem from "../ImageItem/ImageItem";
-import { RootStateOrAny, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/reducers";
 import "./ImageList.scss";
 
-const ImageList: React.FC = () => {
-  const { imageList } = useSelector((state: RootStateOrAny) => state.image);
+const ImageList = () => {
+  const { imageList } = useSelector((state: RootState) => state.image);
 
   return (
     <div className="image-list-container">
