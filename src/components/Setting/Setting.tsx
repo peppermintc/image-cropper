@@ -2,11 +2,11 @@ import _ from "lodash";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
-import * as imageActionCreators from "../../store/actions/imageActionCreators";
+import * as imageActionCreators from "../../actions/imageActionCreators";
 import "./Setting.scss";
 import CheckIcon from "../../img/check-icon.png";
-import { ImageItem } from "../../store/reducers/imageReducer";
-import { RootState } from "../../store/reducers";
+import { ImageItem } from "../../reducers/imageReducer";
+import { RootState } from "../../store/store";
 
 const Setting = () => {
   const { currentImage, imageList } = useSelector(

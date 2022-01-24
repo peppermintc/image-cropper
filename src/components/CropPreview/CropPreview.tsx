@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ImageItem } from "../../store/reducers/imageReducer";
+import { ImageItem } from "../../reducers/imageReducer";
 import "./CropPreview.scss";
 
 interface Props {

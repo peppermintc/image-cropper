@@ -4,10 +4,10 @@ import "./ImageListItem.scss";
 import ImageIcon from "../../img/image-icon.png";
 import deleteIcon from "../../img/delete-icon.png";
 import { bindActionCreators } from "redux";
-import * as imageActionCreators from "../../store/actions/imageActionCreators";
+import * as imageActionCreators from "../../actions/imageActionCreators";
 import { useDispatch, useSelector } from "react-redux";
-import { ImageItem } from "../../store/reducers/imageReducer";
-import { RootState } from "../../store/reducers";
+import { ImageItem } from "../../reducers/imageReducer";
+import { RootState } from "../../store/store";
 
 interface Props {
   item: ImageItem;

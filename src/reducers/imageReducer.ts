@@ -1,6 +1,6 @@
-import KoalaImage from "../../img/sample/koala.jpeg";
-import BirdImage from "../../img/sample/bird1.jpeg";
-import DogImage from "../../img/sample/dog1.jpeg";
+import KoalaImage from "../img/sample/koala.jpeg";
+import BirdImage from "../img/sample/bird1.jpeg";
+import DogImage from "../img/sample/dog1.jpeg";
 
 export interface ImageItem {
   id: number;

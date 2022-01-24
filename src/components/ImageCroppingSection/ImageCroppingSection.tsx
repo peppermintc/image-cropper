@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/reducers";
+import { RootState } from "../../store/store";
 import ImageCropper from "../ImageCropper/ImageCropper";
 import "./ImageCroppingSection.scss";
 
