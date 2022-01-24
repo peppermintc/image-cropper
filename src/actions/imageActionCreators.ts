@@ -1,21 +1,8 @@
-import { Dispatch } from "redux";
 import { ImageItem } from "../reducers/imageReducer";
+import { createAction } from "@reduxjs/toolkit";
 
-// Action creators
-export const updateCurrentImage = (newCurrentImage: ImageItem) => {
-  return async (dispatch: Dispatch) => {
-    await dispatch({
-      type: "UPDATE_CURRENT_IMAGE",
-      payload: newCurrentImage,
-    });
-  };
-};
+export const updateCurrentImage = createAction<ImageItem>(
+  "UPDATE_CURRENT_IMAGE"
+);
 
-export const updateImageList = (newImageList: ImageItem[]) => {
-  return async (dispatch: Dispatch) => {
-    await dispatch({
-      type: "UPDATE_IMAGE_LIST",
-      payload: newImageList,
-    });
-  };
-};
+export const updateImageList = createAction<ImageItem[]>("UPDATE_IMAGE_LIST");
