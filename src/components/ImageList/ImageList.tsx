@@ -1,7 +1,7 @@
 import _ from "lodash";
-import ImageListItem from "../ImageItem/ImageListItem";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import ImageListItem from "../ImageItem/ImageListItem";
 import "./ImageList.scss";
 
 const ImageList = () => {

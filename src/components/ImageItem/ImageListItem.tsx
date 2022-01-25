@@ -1,13 +1,13 @@
 import _ from "lodash";
+import { bindActionCreators } from "redux";
+import { useDispatch, useSelector } from "react-redux";
+import * as imageActionCreators from "../../actions/imageActionCreators";
 import { MouseEvent } from "react";
-import "./ImageListItem.scss";
+import { RootState } from "../../store/store";
+import { ImageItem } from "../../reducers/imageReducer";
 import ImageIcon from "../../img/image-icon.png";
 import deleteIcon from "../../img/delete-icon.png";
-import { bindActionCreators } from "redux";
-import * as imageActionCreators from "../../actions/imageActionCreators";
-import { useDispatch, useSelector } from "react-redux";
-import { ImageItem } from "../../reducers/imageReducer";
-import { RootState } from "../../store/store";
+import "./ImageListItem.scss";
 
 interface Props {
   item: ImageItem;

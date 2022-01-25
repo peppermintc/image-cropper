@@ -1,5 +1,5 @@
-import { ImageItem } from "../reducers/imageReducer";
 import { createAction } from "@reduxjs/toolkit";
+import { ImageItem } from "../reducers/imageReducer";
 
 export const updateCurrentImage = createAction<ImageItem>(
   "UPDATE_CURRENT_IMAGE"

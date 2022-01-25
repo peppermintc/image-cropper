@@ -1,6 +1,6 @@
-import ImageCropper from "../../components/ImageCroppingSection/ImageCroppingSection";
-import Setting from "../../components/Setting/Setting";
 import SideBar from "../../components/SideBar/SideBar";
+import Setting from "../../components/Setting/Setting";
+import ImageCropper from "../../components/ImageCroppingSection/ImageCroppingSection";
 import "./HomePage.scss";
 
 const HomePage = () => {
