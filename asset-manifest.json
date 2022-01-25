@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/image-cropper/static/css/main.a10c4945.css",
-    "main.js": "/image-cropper/static/js/main.c438cae8.js",
+    "main.css": "/image-cropper/static/css/main.f8c43d7e.css",
+    "main.js": "/image-cropper/static/js/main.962b6879.js",
     "static/media/koala.jpeg": "/image-cropper/static/media/koala.acbd7435f0f8ea16504d.jpeg",
     "static/media/dog1.jpeg": "/image-cropper/static/media/dog1.bbd6b04a969277770380.jpeg",
     "static/media/bird1.jpeg": "/image-cropper/static/media/bird1.773598b7ac1525e0afb7.jpeg",
@@ -9,11 +9,11 @@
     "static/media/image-icon.png": "/image-cropper/static/media/image-icon.820bae8bf501a19c0598.png",
     "static/media/delete-icon.png": "/image-cropper/static/media/delete-icon.7b60ffec538438f63aba.png",
     "index.html": "/image-cropper/index.html",
-    "main.a10c4945.css.map": "/image-cropper/static/css/main.a10c4945.css.map",
-    "main.c438cae8.js.map": "/image-cropper/static/js/main.c438cae8.js.map"
+    "main.f8c43d7e.css.map": "/image-cropper/static/css/main.f8c43d7e.css.map",
+    "main.962b6879.js.map": "/image-cropper/static/js/main.962b6879.js.map"
   },
   "entrypoints": [
-    "static/css/main.a10c4945.css",
-    "static/js/main.c438cae8.js"
+    "static/css/main.f8c43d7e.css",
+    "static/js/main.962b6879.js"
   ]
 }
