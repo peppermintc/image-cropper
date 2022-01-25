@@ -1,6 +1,7 @@
 import KoalaImage from "../img/sample/koala.jpeg";
 import BirdImage from "../img/sample/bird1.jpeg";
 import DogImage from "../img/sample/dog1.jpeg";
+import { getUniqueId } from "../utils/createUniqueId";
 
 export interface ImageItem {
   id: number;
@@ -21,26 +22,26 @@ interface Action {
 
 const initialState: ImageState = {
   currentImage: {
-    id: 0,
+    id: 1,
     name: "sample-image-0.jpg",
     url: KoalaImage,
     cropUrl: null,
   },
   imageList: [
     {
-      id: 0,
+      id: getUniqueId(),
       name: "sample-image-0.jpg",
       url: KoalaImage,
       cropUrl: null,
     },
     {
-      id: 1,
+      id: getUniqueId(),
       name: "sample-image-1.jpg",
       url: BirdImage,
       cropUrl: null,
     },
     {
-      id: 2,
+      id: getUniqueId(),
       name: "sample-image-2.jpg",
       url: DogImage,
       cropUrl: null,
