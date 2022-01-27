@@ -13,7 +13,9 @@ interface Props {
 }
 
 const ImageListItem = ({ item }: Props) => {
-  const { imageList } = useSelector((state: RootState) => state.image);
+  const { imageList, currentImage } = useSelector(
+    (state: RootState) => state.image
+  );
 
   const { updateCurrentImage, updateImageList } = useActions();
 
@@ -24,6 +26,10 @@ const ImageListItem = ({ item }: Props) => {
 
   const onDeleteClick = (e: MouseEvent<HTMLElement>) => {
     e.stopPropagation();
+
+    if (currentImage !== undefined && currentImage.id === item.id) {
+      updateCurrentImage();
+    }
 
     const newImageList: ImageItem[] = _.filter(
       imageList,
