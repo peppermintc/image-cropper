@@ -1,7 +1,6 @@
 import { ChangeEvent } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import * as imageActionCreators from "../../actions/imageActionCreators";
-import { bindActionCreators } from "redux";
+import { useSelector } from "react-redux";
+import { useActions } from "../../hooks/useActions";
 import { ImageItem } from "../../reducers/imageReducer";
 import { RootState } from "../../store/store";
 import { getUniqueId } from "../../utils/createUniqueId";
@@ -10,11 +9,7 @@ import "./AddImageButton.scss";
 const AddImageButton = () => {
   const { imageList } = useSelector((state: RootState) => state.image);
 
-  const dispatch = useDispatch();
-  const { updateCurrentImage, updateImageList } = bindActionCreators(
-    imageActionCreators,
-    dispatch
-  );
+  const { updateCurrentImage, updateImageList } = useActions();
 
   const onAddButtonClick = () => {
     const imageUploadInput: HTMLInputElement | null = document.querySelector(

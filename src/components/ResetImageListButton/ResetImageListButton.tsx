@@ -1,14 +1,8 @@
-import { useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import * as imageActionCreators from "../../actions/imageActionCreators";
+import { useActions } from "../../hooks/useActions";
 import "./ResetImageListButton.scss";
 
 const ResetImageListButton = () => {
-  const dispatch = useDispatch();
-  const { resetImageList, updateCurrentImage } = bindActionCreators(
-    imageActionCreators,
-    dispatch
-  );
+  const { resetImageList, updateCurrentImage } = useActions();
 
   const onResetButtonClick = () => {
     resetImageList();

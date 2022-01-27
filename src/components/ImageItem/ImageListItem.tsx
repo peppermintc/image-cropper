@@ -1,10 +1,9 @@
 import _ from "lodash";
-import { bindActionCreators } from "redux";
-import { useDispatch, useSelector } from "react-redux";
-import * as imageActionCreators from "../../actions/imageActionCreators";
+import { useSelector } from "react-redux";
 import { MouseEvent } from "react";
 import { RootState } from "../../store/store";
 import { ImageItem } from "../../reducers/imageReducer";
+import { useActions } from "../../hooks/useActions";
 import ImageIcon from "../../img/image-icon.png";
 import deleteIcon from "../../img/delete-icon.png";
 import "./ImageListItem.scss";
@@ -16,11 +15,7 @@ interface Props {
 const ImageListItem = ({ item }: Props) => {
   const { imageList } = useSelector((state: RootState) => state.image);
 
-  const dispatch = useDispatch();
-  const { updateCurrentImage, updateImageList } = bindActionCreators(
-    imageActionCreators,
-    dispatch
-  );
+  const { updateCurrentImage, updateImageList } = useActions();
 
   const onImageItemClicked = () => {
     const newCurrentImage = item;

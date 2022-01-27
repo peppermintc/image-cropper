@@ -1,10 +1,9 @@
 import _ from "lodash";
 import { useEffect } from "react";
-import { bindActionCreators } from "redux";
-import { useDispatch, useSelector } from "react-redux";
-import * as imageActionCreators from "../../actions/imageActionCreators";
+import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { ImageItem } from "../../reducers/imageReducer";
+import { useActions } from "../../hooks/useActions";
 import CheckIcon from "../../img/check-icon.png";
 import "./Setting.scss";
 
@@ -13,11 +12,7 @@ const Setting = () => {
     (state: RootState) => state.image
   );
 
-  const dispatch = useDispatch();
-  const { updateCurrentImage, updateImageList } = bindActionCreators(
-    imageActionCreators,
-    dispatch
-  );
+  const { updateCurrentImage, updateImageList } = useActions();
 
   useEffect(() => {
     if (!currentImage) return;
