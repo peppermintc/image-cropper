@@ -61,6 +61,11 @@ const imageReducer = (state = initialState, action: Action) => {
         ...state,
         imageList: action.payload,
       };
+    case "RESET_IMAGE_LIST":
+      return {
+        ...state,
+        imageList: [],
+      };
     case "ADD_IMAGE":
       return {
         ...state,

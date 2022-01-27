@@ -2,10 +2,10 @@ import { ChangeEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as imageActionCreators from "../../actions/imageActionCreators";
 import { bindActionCreators } from "redux";
-import "./AddImageButton.scss";
 import { ImageItem } from "../../reducers/imageReducer";
 import { RootState } from "../../store/store";
 import { getUniqueId } from "../../utils/createUniqueId";
+import "./AddImageButton.scss";
 
 const AddImageButton = () => {
   const { imageList } = useSelector((state: RootState) => state.image);
