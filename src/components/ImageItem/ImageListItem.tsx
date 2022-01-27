@@ -13,8 +13,9 @@ interface Props {
 }
 
 const ImageListItem = ({ item }: Props) => {
-  const { imageList, currentImage } = useSelector(
-    (state: RootState) => state.image
+  const imageList = useSelector((state: RootState) => state.image.imageList);
+  const currentImage = useSelector(
+    (state: RootState) => state.image.currentImage
   );
 
   const { updateCurrentImage, updateImageList } = useActions();
