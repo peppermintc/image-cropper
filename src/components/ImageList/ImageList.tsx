@@ -5,7 +5,7 @@ import ImageListItem from "../ImageItem/ImageListItem";
 import "./ImageList.scss";
 
 const ImageList = () => {
-  const { imageList } = useSelector((state: RootState) => state.image);
+  const imageList = useSelector((state: RootState) => state.image.imageList);
 
   const countCropComplete: number = _.filter(
     imageList,
