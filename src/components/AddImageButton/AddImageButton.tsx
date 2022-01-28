@@ -22,6 +22,8 @@ const AddImageButton = () => {
   const onInputFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files === null) return;
 
+    const inputFile = e.target.files[0];
+
     const reader = new FileReader();
 
     reader.onload = () => {
@@ -30,7 +32,7 @@ const AddImageButton = () => {
       const inputImageUrl: string = reader.result;
       const inputImage: ImageItem = {
         id: getUniqueId(),
-        name: "new image name",
+        name: inputFile.name,
         url: inputImageUrl,
         cropUrl: null,
       };
@@ -42,7 +44,7 @@ const AddImageButton = () => {
       updateImageList(newImageList);
     };
 
-    reader.readAsDataURL(e.target.files[0]);
+    reader.readAsDataURL(inputFile);
   };
 
   return (
